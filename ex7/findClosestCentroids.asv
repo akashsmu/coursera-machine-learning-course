@@ -22,14 +22,10 @@ idx = zeros(size(X,1), 1);
 %
 
 m=size(X,1);
-
+calC=zeros(size(centroids,1),1);
 for i=1:m
-    calC=zeros(size(centroids,1),1);
-    for j=1:size(centroids,1)
-    calC(j,:)=norm(X(i,:)-centroids(j,:));
-    end
-    [~,idx_inter]=min(calC);
-    idx(i,:)=idx_inter;
+    calC(i,:)=norm(X(i,:)-centroids(i,:))
+
 
 end
 
